@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SD Storefront: websites for San Diego businesses</title>
+<meta name="description" content="SD Storefront is a small San Diego web design studio. We build simple, fast, mobile-friendly websites for local businesses, and show you a free concept before you decide anything.">
+<meta name="theme-color" content="#0b4a73">
+<style>
+:root{--ink:#14202b;--muted:#4a5865;--deep:#0b4a73;--sea:#0e6aa3;--foam:#e6f3fa;--sand:#f7f2e8;--sun:#ee8b2d;--sun-dark:#c76d14;--card:#fff;--line:#e3dccb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--sand);-webkit-text-size-adjust:100%}
+a{color:var(--sea)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* top bar */
+.bar{position:absolute;inset:0 0 auto 0;z-index:3;padding:20px 0}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800;letter-spacing:.1em;font-size:15px}
+.logo svg{width:30px;height:30px;flex:none}
+.bar nav a{color:#fff;text-decoration:none;font-size:15px;margin-left:22px;opacity:.92}
+.bar nav a:hover{opacity:1;text-decoration:underline}
+
+/* hero */
+.hero{position:relative;color:#fff;overflow:hidden;background:linear-gradient(180deg,#f6b45e 0%,#ee8b2d 14%,#d9695a 32%,#6a5a9c 52%,#0e6aa3 74%,#0b4a73 100%)}
+.hero .hero-in{position:relative;z-index:2;padding-top:120px;padding-bottom:150px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.sun{position:absolute;z-index:1;right:12%;top:70px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle at 50% 50%,#fff3c7 0%,#ffd98a 55%,rgba(255,217,138,0) 72%);opacity:.9}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 14px;margin-bottom:20px}
+h1{font-size:clamp(34px,5.6vw,58px);line-height:1.05;margin:0 0 20px;letter-spacing:-.02em;text-wrap:balance}
+.hero p.lead{font-size:clamp(18px,2.2vw,21px);max-width:34em;margin:0 0 30px;color:#f2f7fb}
+.cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{display:inline-block;background:var(--sun);color:#1b1206;font-weight:800;padding:15px 26px;border-radius:12px;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.btn:hover{background:#f7a04a;transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:#fff;box-shadow:none;border:2px solid rgba(255,255,255,.65);padding:13px 24px}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.waves{position:absolute;left:0;right:0;bottom:-1px;z-index:2;line-height:0}
+.waves svg{display:block;width:100%;height:90px}
+
+/* browser mock */
+.mock{background:#fff;border-radius:14px;box-shadow:0 24px 50px rgba(5,25,45,.45);overflow:hidden;color:var(--ink);transform:rotate(1.6deg)}
+.mock .top{display:flex;align-items:center;gap:6px;background:#eef1f4;padding:10px 12px}
+.mock .top i{width:10px;height:10px;border-radius:50%;background:#c7ced6;display:block}
+.mock .top span{margin-left:10px;flex:1;background:#fff;border-radius:6px;font-size:11px;color:#7a8794;padding:3px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mock .page{padding:0 0 16px}
+.mock .banner{height:92px;background:linear-gradient(120deg,#0e6aa3,#33a3c9 60%,#9ad7e6)}
+.mock .page h4{margin:14px 16px 4px;font-size:17px}
+.mock .page p{margin:0 16px 10px;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.mock .row{display:flex;gap:8px;margin:0 16px}
+.mock .row b{flex:1;height:44px;border-radius:8px;background:var(--foam)}
+.mock .pill{display:inline-block;margin:10px 16px 0;background:var(--sun);color:#1b1206;font-weight:800;font-size:12px;padding:7px 14px;border-radius:8px}
+.mock-note{font-size:12.5px;color:#d9e8f2;margin:14px 6px 0;text-align:center}
+
+/* sections */
+section{padding:72px 0}
+section.alt{background:#fff}
+h2{font-size:clamp(26px,3.6vw,36px);line-height:1.15;margin:0 0 12px;letter-spacing:-.01em;text-wrap:balance}
+.sub{font-size:19px;color:var(--muted);max-width:40em;margin:0 0 36px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 24px 22px}
+.card h3{margin:14px 0 6px;font-size:19px}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.ico{width:46px;height:46px;border-radius:12px;background:var(--foam);display:grid;place-items:center}
+.ico svg{width:26px;height:26px;stroke:var(--sea);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{position:relative;background:var(--sand);border-radius:16px;padding:26px 24px 22px}
+.step:before{counter-increment:s;content:counter(s);position:absolute;top:-16px;left:22px;width:34px;height:34px;border-radius:50%;background:var(--deep);color:#fff;font-weight:800;display:grid;place-items:center}
+.step h3{margin:6px 0 6px;font-size:19px}
+.step p{margin:0;color:var(--muted);font-size:16px}
+
+/* price */
+.price{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.pricecard{background:linear-gradient(160deg,var(--deep),var(--sea));color:#fff;border-radius:20px;padding:34px 32px;box-shadow:0 18px 40px rgba(11,74,115,.3)}
+.pricecard .amt{font-size:60px;font-weight:800;line-height:1;letter-spacing:-.02em}
+.pricecard .amt small{font-size:18px;font-weight:600;opacity:.85;letter-spacing:0}
+.pricecard p{margin:12px 0 0;color:#e3f0f8}
+.ticks{list-style:none;margin:0;padding:0}
+.ticks li{position:relative;padding:0 0 12px 34px}
+.ticks li:before{content:"";position:absolute;left:0;top:5px;width:20px;height:20px;border-radius:50%;background:var(--foam) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-6.5' fill='none' stroke='%230e6aa3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat}
+.fine{font-size:14px;color:var(--muted);margin-top:14px}
+
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:12px;margin:0 0 12px;padding:0}
+summary{cursor:pointer;list-style:none;font-weight:700;padding:18px 22px;position:relative;padding-right:52px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:22px;top:50%;transform:translateY(-52%);font-size:24px;color:var(--sea);font-weight:400}
+details[open] summary:after{content:"\2212"}
+details p{margin:0;padding:0 22px 20px;color:var(--muted)}
+
+/* contact band */
+.band{background:linear-gradient(120deg,var(--deep),var(--sea));color:#fff;text-align:center;padding:64px 0}
+.band h2{color:#fff}
+.band p{max-width:34em;margin:0 auto 26px;color:#e3f0f8;font-size:19px}
+.band .addr{margin-top:22px;font-size:15px;color:#cfe3f1}
+.band a.mail{color:#fff;font-weight:700}
+
+footer{padding:30px 0 44px;font-size:14px;color:var(--muted)}
+footer p{margin:0 0 8px}
+
+:focus-visible{outline:3px solid #ffbf6b;outline-offset:2px;border-radius:6px}
+@media (max-width:860px){
+  .hero .hero-in{grid-template-columns:1fr;padding-top:104px;padding-bottom:130px}
+  .mock{max-width:420px;transform:none}
+  .sun{right:6%;top:96px;width:120px;height:120px}
+  .grid3,.steps,.price{grid-template-columns:1fr}
+  .steps{gap:30px}
+  .bar nav a:not(.keep){display:none}
+  section{padding:56px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="bar"><div class="wrap">
+    <a class="logo" href="#top" aria-label="SD Storefront">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#fff" opacity=".18"/><path d="M5 20c3-3 5-3 8 0s5 3 8 0 5-3 6-1" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M9 14h14l-1.4-5H10.4z" fill="#fff"/><rect x="10" y="14" width="12" height="4" fill="#fff" opacity=".7"/></svg>
+      SD STOREFRONT
+    </a>
+    <nav><a href="#how">How it works</a><a href="#price">Price</a><a href="#faq">Questions</a><a class="keep" href="#contact">Contact</a></nav>
+  </div></div>
+  <div class="sun" aria-hidden="true"></div>
+  <div class="wrap hero-in" id="top">
+    <div>
+      <span class="eyebrow">San Diego web studio</span>
+      <h1>A website that works as hard as your storefront.</h1>
+      <p class="lead">We build simple, fast, mobile-friendly websites for San Diego businesses, and we show you a free concept page before you decide anything.</p>
+      <div class="cta">
+        <a class="btn" href="mailto:sandiegostorefront@gmail.com?subject=Website%20question">Write to us</a>
+        <a class="btn ghost" href="#how">See how it works</a>
+      </div>
+    </div>
+    <div aria-hidden="true">
+      <div class="mock">
+        <div class="top"><i></i><i></i><i></i><span>yourbusiness.com</span></div>
+        <div class="page">
+          <div class="banner"></div>
+          <h4>Your Business Name</h4>
+          <p>What you do, where you are and when you are open, readable on any phone.</p>
+          <div class="row"><b></b><b></b><b></b></div>
+          <span class="pill">Call or book</span>
+        </div>
+      </div>
+      <p class="mock-note">Illustration of a typical layout. Not a real business.</p>
+    </div>
+  </div>
+  <div class="waves" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0 40c120 30 240 30 360 0s240-30 360 0 240 30 360 0 240-30 360 0v50H0z" fill="#f7f2e8"/></svg>
+  </div>
+</div>
+
+<section id="why">
+  <div class="wrap">
+    <h2>What a good small-business site does</h2>
+    <p class="sub">Most customers look you up on their phone before they call or walk in. A clear page answers their questions in seconds.</p>
+    <div class="grid3">
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></div><h3>Easy on a phone</h3><p>Large, readable text and buttons that work with a thumb, so people can find your hours and tap to call.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2.5L5 13.5h6l-1 8 8-11h-6z"/></svg></div><h3>Fast to load</h3><p>Plain, lightweight pages without heavy extras, so they open quickly even on a slow connection.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0113 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></div><h3>Easy to find</h3><p>Your name, address, hours and phone number laid out clearly, the way local searchers expect to see them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">You see the work first. There is nothing to sign and nothing to pay until you say yes.</p>
+    <div class="steps">
+      <div class="step"><h3>We build a concept</h3><p>Using only what is already public about your business, we make a free homepage concept.</p></div>
+      <div class="step"><h3>You take a look</h3><p>We send you a link. Change what you like, or tell us it is not for you. Either answer is fine.</p></div>
+      <div class="step"><h3>We put it live</h3><p>If you want it, we set it up on a domain you own, so the site is yours to keep.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="price">
+  <div class="wrap price">
+    <div class="pricecard">
+      <div class="amt">$399 <small>one time</small></div>
+      <p>A one-time fee, including setup on your own domain.</p>
+    </div>
+    <div>
+      <h2>Simple pricing</h2>
+      <ul class="ticks">
+        <li>One fee, quoted up front.</li>
+        <li>The concept page is free, with no obligation.</li>
+        <li>The domain is registered in your name.</li>
+        <li>Before you decide, we put in writing exactly what is included.</li>
+      </ul>
+      <p class="fine">Prices can change. The amount we confirm in writing for your business is the one that counts.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="faq">
+  <div class="wrap" style="max-width:780px">
+    <h2>Questions you may have</h2>
+    <p class="sub">Straight answers, including the ones about e-mail.</p>
+    <details><summary>Why did I get an e-mail from you?</summary><p>We look at businesses in San Diego County using public information, such as map listings and the business's own website. If yours looked like it could use a clearer website, we may have built a concept for it and written to you once.</p></details>
+    <details><summary>I do not want to hear from you.</summary><p>Reply "no thanks" to our e-mail, or write to sandiegostorefront@gmail.com, and we will not contact you or your domain again.</p></details>
+    <details><summary>Can you take down the concept page you built?</summary><p>Yes. Write to us and it comes down within one business day. Every concept page also says how to ask.</p></details>
+    <details><summary>Is the concept page about my business accurate?</summary><p>It is built from public listings and may be out of date or incomplete. It is only a starting point, and you decide what is true and what goes on your real site.</p></details>
+    <details><summary>Is this done by a person or by software?</summary><p>Both. We use software to read public pages and to help draft concepts, and a person (Lance) reviews each message and decides whether it is sent. Concept pages are created with AI-assisted tools.</p></details>
+    <details><summary>What is the "SDStorefrontHarbor" visitor in my website logs?</summary><p>That is our reader. It fetches only public pages, reads a site's robots.txt first, goes slowly, and shows this page's address in its user-agent so you can find us.</p></details>
+  </div>
+</section>
+
+<div class="band" id="contact">
+  <div class="wrap">
+    <h2>Questions, or want to see a concept?</h2>
+    <p>Write to us. A real person reads every message.</p>
+    <a class="btn" href="mailto:sandiegostorefront@gmail.com?subject=Website%20question">sandiegostorefront@gmail.com</a>
+    <div class="addr">SD Storefront &middot; Lance Cowling &middot; 16345 Los Arboles, Rancho Santa Fe, CA 92067</div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>SD Storefront is a small web design studio in San Diego County, California.</p>
+    <p>Concept pages are created with AI-assisted tools from public information and are not affiliated with, or endorsed by, the businesses they show.</p>
+  </div>
+</footer>
+
+</body>
+</html>
